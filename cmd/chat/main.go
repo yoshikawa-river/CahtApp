@@ -4,11 +4,11 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/yoshikawa-river/CahtApp/adapter"
+	adapterHttp "github.com/yoshikawa-river/CahtApp/adapter/http"
 )
 
 func main() {
-	router := adapter.InitRouter()
+	router := adapterHttp.InitRouter()
 
 	server := http.Server{
 		Addr:    ":8080",
