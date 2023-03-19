@@ -2,3 +2,4 @@
 .air.toml
 .vscode
 .env
+.dbconfig.yml
