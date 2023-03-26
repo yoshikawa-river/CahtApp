@@ -4,17 +4,17 @@ import (
 	"log"
 	"net/http"
 
-	adapterHttp "github.com/yoshikawa-river/CahtApp/adapter/http"
-	"github.com/yoshikawa-river/CahtApp/config"
-	"github.com/yoshikawa-river/CahtApp/infla"
+	adapterHttp "github.com/yoshikawa-river/ChatApp/adapter/http"
+	"github.com/yoshikawa-river/ChatApp/config"
+	"github.com/yoshikawa-river/ChatApp/infla"
 )
 
 func main() {
 	appConfig := config.LoadConfig()
 
-	router := adapterHttp.InitRouter()
+	db_info, _ := infla.NewConnDB(appConfig.DBInfo)
 
-	infla.NewConnDB(appConfig.DBInfo)
+	router := adapterHttp.InitRouter(db_info)
 
 	server := http.Server{
 		Addr:    ":" + appConfig.HttpInfo.PROTOCOL,
