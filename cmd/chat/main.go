@@ -6,13 +6,13 @@ import (
 
 	adapterHttp "github.com/yoshikawa-river/ChatApp/adapter/http"
 	"github.com/yoshikawa-river/ChatApp/config"
-	"github.com/yoshikawa-river/ChatApp/infla"
+	"github.com/yoshikawa-river/ChatApp/infra"
 )
 
 func main() {
 	appConfig := config.LoadConfig()
 
-	db_info, _ := infla.NewConnDB(appConfig.DBInfo)
+	db_info, _ := infra.NewConnDB(appConfig.DBInfo)
 
 	router := adapterHttp.InitRouter(db_info)
 

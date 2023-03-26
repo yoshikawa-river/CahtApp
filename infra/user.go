@@ -1,4 +1,4 @@
-package infla
+package infra
 
 import (
 	"context"

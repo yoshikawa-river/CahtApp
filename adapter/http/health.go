@@ -5,7 +5,7 @@ import (
 
 	"github.com/yoshikawa-river/ChatApp/adapter/http/response"
 	"github.com/yoshikawa-river/ChatApp/config"
-	"github.com/yoshikawa-river/ChatApp/infla"
+	"github.com/yoshikawa-river/ChatApp/infra"
 )
 
 func ServerHealthCheck(w http.ResponseWriter, r *http.Request) {
@@ -17,7 +17,7 @@ func ServerHealthCheck(w http.ResponseWriter, r *http.Request) {
 
 func DBHealthCheck(w http.ResponseWriter, r *http.Request) {
 	DBInfo := config.LoadConfig().DBInfo
-	_, err := infla.NewConnDB(DBInfo)
+	_, err := infra.NewConnDB(DBInfo)
 	if err != nil {
 		// DBへのコネクションにてエラーが発生した場合は503レスポンス
 		rs := response.SimpleResponse{
