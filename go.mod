@@ -1,4 +1,4 @@
-module github.com/yoshikawa-river/CahtApp
+module github.com/yoshikawa-river/ChatApp
 
 go 1.20
 
