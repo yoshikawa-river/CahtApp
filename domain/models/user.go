@@ -4,7 +4,7 @@ import (
 	"time"
 
 	"github.com/volatiletech/null/v8"
-	domain "github.com/yoshikawa-river/ChatApp/domain/models"
+	"github.com/yoshikawa-river/ChatApp/domain/entity"
 )
 
 type User struct {
@@ -15,8 +15,8 @@ type User struct {
 	UpdatedAt null.Time `json:"updated_at"`
 }
 
-func UserToDomainModel(u *User) *domain.User {
-	return &domain.User{
+func UserToDomainModel(u *User) *entity.User {
+	return &entity.User{
 		ID:        u.ID,
 		Name:      u.Name,
 		Email:     u.Email,
@@ -25,7 +25,7 @@ func UserToDomainModel(u *User) *domain.User {
 	}
 }
 
-func UserFromDomainModel(u *domain.User) *User {
+func UserFromDomainModel(u *entity.User) *User {
 	return &User{
 		ID:        u.ID,
 		Name:      u.Name,

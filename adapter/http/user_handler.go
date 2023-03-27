@@ -6,8 +6,8 @@ import (
 	"net/http"
 
 	"github.com/yoshikawa-river/ChatApp/adapter/http/response"
+	"github.com/yoshikawa-river/ChatApp/domain/models"
 	"github.com/yoshikawa-river/ChatApp/usecase"
-	"github.com/yoshikawa-river/ChatApp/usecase/models"
 )
 
 type userHandler struct {

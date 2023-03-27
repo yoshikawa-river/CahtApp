@@ -3,8 +3,8 @@ package usecase
 import (
 	"context"
 
+	"github.com/yoshikawa-river/ChatApp/domain/models"
 	"github.com/yoshikawa-river/ChatApp/domain/repository"
-	"github.com/yoshikawa-river/ChatApp/usecase/models"
 )
 
 type IUserInteractor interface {

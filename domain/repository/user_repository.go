@@ -3,10 +3,10 @@ package repository
 import (
 	"context"
 
-	"github.com/yoshikawa-river/ChatApp/domain/models"
+	"github.com/yoshikawa-river/ChatApp/domain/entity"
 )
 
 type IUserRepository interface {
-	Create(ctx context.Context, u *models.User) (*models.User, error)
-	Validate(ctx context.Context, u *models.User) error
+	Create(ctx context.Context, u *entity.User) (*entity.User, error)
+	Validate(ctx context.Context, u *entity.User) error
 }
