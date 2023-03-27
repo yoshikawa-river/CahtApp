@@ -21,11 +21,11 @@ func NewUserInteractor(userRepository repository.IUserRepository) IUserInteracto
 	}
 }
 
-func (uu *UserInteractor) Create(ctx context.Context, u *models.User) (*models.User, error) {
+func (ui *UserInteractor) Create(ctx context.Context, u *models.User) (*models.User, error) {
 	user := models.UserToDomainModel(u)
-	du, err := uu.ur.Create(ctx, user)
+	eu, err := ui.ur.Create(ctx, user)
 	if err != nil {
 		panic(err)
 	}
-	return models.UserFromDomainModel(du), err
+	return models.UserFromDomainModel(eu), err
 }
