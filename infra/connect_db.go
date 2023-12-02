@@ -1,11 +1,11 @@
-package infla
+package infra
 
 import (
 	"database/sql"
 	"fmt"
 
 	_ "github.com/go-sql-driver/mysql"
-	"github.com/yoshikawa-river/CahtApp/config"
+	"github.com/yoshikawa-river/ChatApp/config"
 )
 
 func NewConnDB(dbInfo *config.DBInfo) (*sql.DB, error) {
