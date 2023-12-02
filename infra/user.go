@@ -54,3 +54,11 @@ func (ur *UserRepository) Validate(ctx context.Context, u *entity.User) error {
 
 	return nil
 }
+
+// 更新の関数を追加
+func (ur *UserRepository) Update(ctx context.Context, u *entity.User) (*entity.User, error) {
+	if err := ur.Validate(ctx, u); err != nil {
+		return nil, err
+	}
+	return u, u.Update(ctx, ur.DB, boil.Infer())
+}
